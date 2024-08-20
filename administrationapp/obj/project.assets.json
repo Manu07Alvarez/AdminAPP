@@ -1520,24 +1520,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yo\\.nuget\\packages\\": {}
+    "C:\\Users\\Fulanito\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj",
+      "projectUniqueName": "C:\\Users\\Fulanito\\Desktop\\ProyectoPaginaAdmin\\admin\\administrationapp\\administrationapp.csproj",
       "projectName": "administrationapp",
-      "projectPath": "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj",
-      "packagesPath": "C:\\Users\\yo\\.nuget\\packages\\",
-      "outputPath": "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\obj\\",
+      "projectPath": "C:\\Users\\Fulanito\\Desktop\\ProyectoPaginaAdmin\\admin\\administrationapp\\administrationapp.csproj",
+      "packagesPath": "C:\\Users\\Fulanito\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Fulanito\\Desktop\\ProyectoPaginaAdmin\\admin\\administrationapp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\yo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Fulanito\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1602,7 +1610,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

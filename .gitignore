@@ -143,4 +143,8 @@ _NCrunch*
 
 !.vscode/extensions.json
 
-**/.code-workspace/
+C#.code-workspace
+
+**/*.history/
+/administrationapp/obj
+/Admin.generated.sln
