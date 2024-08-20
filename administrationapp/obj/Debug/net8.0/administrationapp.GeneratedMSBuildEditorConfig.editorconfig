@@ -15,12 +15,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = administrationapp
-build_property.ProjectDir = E:\Programacion\C#\Avalonia\Admin\administrationapp\
+build_property.ProjectDir = e:\Programacion\C#\Avalonia\Admin\administrationapp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[E:/Programacion/C\#/Avalonia/Admin/administrationapp/App.axaml]
+[e:/Programacion/C\#/Avalonia/Admin/administrationapp/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[E:/Programacion/C\#/Avalonia/Admin/administrationapp/Views/MainWindow.axaml]
+[e:/Programacion/C\#/Avalonia/Admin/administrationapp/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

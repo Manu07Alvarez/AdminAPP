@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj": {}
+    "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj": {}
   },
   "projects": {
-    "E:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj": {
+    "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj",
+        "projectUniqueName": "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj",
         "projectName": "administrationapp",
-        "projectPath": "E:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj",
+        "projectPath": "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\administrationapp.csproj",
         "packagesPath": "C:\\Users\\yo\\.nuget\\packages\\",
-        "outputPath": "E:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\obj\\",
+        "outputPath": "e:\\Programacion\\C#\\Avalonia\\Admin\\administrationapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yo\\AppData\\Roaming\\NuGet\\NuGet.Config"
