@@ -148,3 +148,6 @@ C#.code-workspace
 **/*.history/
 /administrationapp/obj
 /Admin.generated.sln
+/.idea/
+AdminAPP.generated.sln
+administrationapp.code-workspace
