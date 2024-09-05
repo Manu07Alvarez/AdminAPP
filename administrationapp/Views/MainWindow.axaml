@@ -7,14 +7,37 @@
         x:Class="administrationapp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="administrationapp">
+        Title="administrationapp"
+				Width="400"
+				Height="500">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<SplitView IsPaneOpen="{Binding IsPaneOpen}"
+			   OpenPaneLength="300" 
+			   CompactPaneLength="48"
+			   DisplayMode="CompactInline"
+			   Background="black"
+			   PaneBackground="#1e1e1e">  
+    <SplitView.Pane>
+			<StackPanel Spacing="5" Margin="5">
+				<Button Command="{Binding TriggerPaneCommand}">
+					-
+				</Button>
+				<ListBox>
+					<ListBoxItem>item</ListBoxItem>
+					<ListBoxItem>item</ListBoxItem>
+					<ListBoxItem>item</ListBoxItem>
+				</ListBox>
+			</StackPanel>
+		</SplitView.Pane>
+
+  </SplitView>
 
 </Window>
+
