@@ -22,21 +22,37 @@
 			   OpenPaneLength="300" 
 			   CompactPaneLength="48"
 			   DisplayMode="CompactInline"
-			   Background="black"
+			   Background="Gray"
 			   PaneBackground="#1e1e1e">  
     <SplitView.Pane>
 			<StackPanel Spacing="5" Margin="5">
 				<Button Command="{Binding TriggerPaneCommand}">
 					-
 				</Button>
-				<ListBox>
-					<ListBoxItem>item</ListBoxItem>
-					<ListBoxItem>item</ListBoxItem>
-					<ListBoxItem>item</ListBoxItem>
+				<ListBox ItemsSource="{Binding Items}">
+					<ListBox.ItemTemplate>
+						<DataTemplate DataType="{x:Type vm:ListItemTemplate}">
+							<StackPanel Spacing="15" Orientation="Horizontal">
+								<TextBlock Text="{Binding label}">
+									
+								</TextBlock>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
 				</ListBox>
 			</StackPanel>
 		</SplitView.Pane>
+		<SplitView.Content>
+			<Border CornerRadius="12 0 0 0 "
+				    Background="#2d2d2d"
+					>
+				<TransitioningContentControl Content="{Binding CurrentPage}"/>
 
+			</Border>	
+			
+			
+			
+		</SplitView.Content>
   </SplitView>
 
 </Window>
