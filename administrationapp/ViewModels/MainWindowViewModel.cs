@@ -9,7 +9,7 @@ namespace administrationapp.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
     [ObservableProperty]
-    private bool _IsPaneOpen = true;
+    private bool _isPaneOpen = true;
 
     [ObservableProperty]
     private ViewModelBase _CurrentPage = new HomePageViewModel();

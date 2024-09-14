@@ -17,43 +17,50 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
-
-	<SplitView IsPaneOpen="{Binding IsPaneOpen}"
-			   OpenPaneLength="300" 
-			   CompactPaneLength="48"
-			   DisplayMode="CompactInline"
-			   Background="Gray"
-			   PaneBackground="#1e1e1e">  
-    <SplitView.Pane>
-			<StackPanel Spacing="5" Margin="5">
-				<Button Command="{Binding TriggerPaneCommand}">
-					-
-				</Button>
-				<ListBox ItemsSource="{Binding Items}">
-					<ListBox.ItemTemplate>
-						<DataTemplate DataType="{x:Type vm:ListItemTemplate}">
-							<StackPanel Spacing="15" Orientation="Horizontal">
-								<TextBlock Text="{Binding label}">
-									
-								</TextBlock>
-							</StackPanel>
-						</DataTemplate>
-					</ListBox.ItemTemplate>
-				</ListBox>
-			</StackPanel>
-		</SplitView.Pane>
-		<SplitView.Content>
-			<Border CornerRadius="12 0 0 0 "
-				    Background="#2d2d2d"
-					>
-				<TransitioningContentControl Content="{Binding CurrentPage}"/>
-
+	<StackPanel Orientation="Vertical">
+		<TabControl Margin="5">
+			
+			<TabItem Header="Tab 1" FontSize="15">
+					
+			</TabItem>
+			<TabItem Header="Tab 2" FontSize="15">
+				<TextBlock Margin="5">This is tab 2 content</TextBlock>
+			</TabItem>
+			<TabItem Header="Tab 3" FontSize="15"> 
+				<TextBlock Margin="5">This is tab 3 content</TextBlock>
+			</TabItem>
+		</TabControl>
+		<SplitView IsPaneOpen="{Binding IsPaneOpen}"
+		           OpenPaneLength="300" 
+		           CompactPaneLength="48"
+		           DisplayMode="CompactInline"
+		           Background="Gray"
+		           PaneBackground="#1e1e1e">  
+	    <SplitView.Pane>
+				<StackPanel Spacing="5" Margin="5">
+					<Button Command="{Binding TriggerPaneCommand}">
+						-
+					</Button>
+					<ListBox ItemsSource="{Binding Items}">
+						<ListBox.ItemTemplate>
+							<DataTemplate DataType="{x:Type vm:ListItemTemplate}">
+								<StackPanel Spacing="15" Orientation="Horizontal">
+									<TextBlock Text="{Binding label}">
+										
+									</TextBlock>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+			</SplitView.Pane>
+			<SplitView.Content>
+				<Border CornerRadius="12 0 0 0 "
+					    Background="#2d2d2d">
+					<TransitioningContentControl Content="{Binding CurrentPage}"/>
 			</Border>	
-			
-			
-			
-		</SplitView.Content>
-  </SplitView>
-
+			</SplitView.Content>
+	  </SplitView>
+	</StackPanel>
 </Window>
 
