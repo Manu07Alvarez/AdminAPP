@@ -39,7 +39,7 @@
 	    <SplitView.Pane>
 				<StackPanel Spacing="5" Margin="5">
 					<Button Command="{Binding TriggerPaneCommand}">
-						-
+						<PathIcon Data="{StaticResource linehorizontal3regular}"></PathIcon>
 					</Button>
 					<ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedListItem}">
 						<ListBox.ItemTemplate>

@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -45,4 +46,5 @@ public class ListItemTemplate
     }
     public string label { get; }
     public Type ModelType { get; }
+    public StreamGeometry ListItemIcon { get; }
 }
