@@ -1,6 +1,6 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+using System;
+
 
 namespace administrationapp;
 
@@ -9,5 +9,10 @@ public partial class HomePageView : UserControl
     public HomePageView()
     {
         InitializeComponent();
+    }
+
+    private void InitializeComponent()
+    {
+        throw new NotImplementedException();
     }
 }

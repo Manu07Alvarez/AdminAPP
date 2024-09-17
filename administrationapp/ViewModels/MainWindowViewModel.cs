@@ -1,9 +1,12 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.ObjectModel;
+
+
 
 namespace administrationapp.ViewModels;
 
@@ -27,8 +30,8 @@ public partial class MainWindowViewModel : ViewModelBase
     }
     public ObservableCollection<ListItemTemplate> Items { get; } = new()
     {
-        new ListItemTemplate(typeof(HomePageViewModel)),
-        new ListItemTemplate(typeof(ButtonPageViewModel)),
+        new ListItemTemplate(typeof(HomePageViewModel),"Homeregular"),
+        new ListItemTemplate(typeof(ButtonPageViewModel), "CursorHoverRegular"),
      };
     [RelayCommand]
     private void TriggerPane()
@@ -39,10 +42,14 @@ public partial class MainWindowViewModel : ViewModelBase
 
 public class ListItemTemplate
 {
-    public ListItemTemplate ( Type type)
+    public ListItemTemplate ( Type type, string IconKey)
     {
         ModelType = type;
         label = type.Name.Replace("PageViewModel", "");
+
+        Application.Current!.TryFindResource(IconKey, out var res);
+        ListItemIcon = (StreamGeometry)res!;
+
     }
     public string label { get; }
     public Type ModelType { get; }
