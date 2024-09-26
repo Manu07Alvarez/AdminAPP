@@ -1,8 +1,7 @@
 using Avalonia.Controls;
 using System;
 
-
-namespace administrationapp;
+namespace administrationapp.Views;
 
 public partial class HomePageView : UserControl
 {
@@ -11,7 +10,7 @@ public partial class HomePageView : UserControl
         InitializeComponent();
     }
 
-    private void InitializeComponent()
+    private static void InitializeComponent()
     {
         throw new NotImplementedException();
     }

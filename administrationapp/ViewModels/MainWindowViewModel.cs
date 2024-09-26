@@ -16,10 +16,10 @@ public partial class MainWindowViewModel : ViewModelBase
     private bool _isPaneOpen = true;
 
     [ObservableProperty]
-    private ViewModelBase _CurrentPage = new HomePageViewModel();
+    private ViewModelBase _currentPage = new HomePageViewModel();
 
     [ObservableProperty]
-    private ListItemTemplate? _SelectedListItem;
+    private ListItemTemplate? _selectedListItem;
 
     partial void OnSelectedListItemChanged(ListItemTemplate? value)
     {
@@ -42,16 +42,15 @@ public partial class MainWindowViewModel : ViewModelBase
 
 public class ListItemTemplate
 {
-    public ListItemTemplate ( Type type, string IconKey)
+    public ListItemTemplate ( Type type, string iconKey)
     {
         ModelType = type;
-        label = type.Name.Replace("PageViewModel", "");
-
-        Application.Current!.TryFindResource(IconKey, out var res);
+        Label = type.Name.Replace("PageViewModel", "");
+        Application.Current!.TryFindResource(iconKey, out var res);
         ListItemIcon = (StreamGeometry)res!;
 
     }
-    public string label { get; }
+    public string Label { get; }
     public Type ModelType { get; }
     public StreamGeometry ListItemIcon { get; }
 }
