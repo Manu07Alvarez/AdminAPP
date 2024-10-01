@@ -18,21 +18,9 @@
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
 	<StackPanel Orientation="Vertical">
-		<TabControl Margin="5">
-			
-			<TabItem Header="Tab 1" FontSize="15">
-					
-			</TabItem>
-			<TabItem Header="Tab 2" FontSize="15">
-				<TextBlock Margin="5">This is tab 2 content</TextBlock>
-			</TabItem>
-			<TabItem Header="Tab 3" FontSize="15"> 
-				<TextBlock Margin="5">This is tab 3 content</TextBlock>
-			</TabItem>
-		</TabControl>
 		<SplitView IsPaneOpen="{Binding IsPaneOpen}"
 		           OpenPaneLength="300" 
-		           CompactPaneLength="48"
+		           CompactPaneLength="47"
 		           DisplayMode="CompactInline"
 		           Background="Gray"
 		           PaneBackground="#1e1e1e">  
@@ -59,7 +47,7 @@
 				<Border CornerRadius="12 0 0 0 "
 					    Background="#2d2d2d">
 					<TransitioningContentControl Content="{Binding CurrentPage}"/>
-			</Border>	
+			</Border>
 			</SplitView.Content>
 	  </SplitView>
 	</StackPanel>

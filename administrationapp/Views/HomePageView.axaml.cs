@@ -9,9 +9,4 @@ public partial class HomePageView : UserControl
     {
         InitializeComponent();
     }
-
-    private static void InitializeComponent()
-    {
-        throw new NotImplementedException();
-    }
 }

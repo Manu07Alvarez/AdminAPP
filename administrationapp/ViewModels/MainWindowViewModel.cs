@@ -31,6 +31,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public ObservableCollection<ListItemTemplate> Items { get; } = new()
     {
         new ListItemTemplate(typeof(HomePageViewModel),"Homeregular"),
+        new ListItemTemplate(typeof(ImportsViewModel),"Importsregular"),
         new ListItemTemplate(typeof(ButtonPageViewModel), "CursorHoverRegular"),
      };
     [RelayCommand]
