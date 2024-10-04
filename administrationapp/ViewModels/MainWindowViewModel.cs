@@ -5,7 +5,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.ObjectModel;
-
+using ReactiveUI;
 
 
 namespace administrationapp.ViewModels;
@@ -16,7 +16,7 @@ public partial class MainWindowViewModel : ViewModelBase
     private bool _isPaneOpen = true;
 
     [ObservableProperty]
-    private ViewModelBase _currentPage = new HomePageViewModel();
+    private object? _currentPage = new HomePageViewModel();
 
     [ObservableProperty]
     private ListItemTemplate? _selectedListItem;
@@ -26,12 +26,12 @@ public partial class MainWindowViewModel : ViewModelBase
         if (value is null) return;
         var instance=Activator.CreateInstance(value.ModelType);
         if (instance is null) return;
-        CurrentPage = (ViewModelBase)instance;
+        CurrentPage = instance;
     }
     public ObservableCollection<ListItemTemplate> Items { get; } = new()
     {
         new ListItemTemplate(typeof(HomePageViewModel),"Homeregular"),
-        new ListItemTemplate(typeof(ImportsViewModel),"Importsregular"),
+        new ListItemTemplate(typeof(StockPageViewModel),"app_generic_regular"),
         new ListItemTemplate(typeof(ButtonPageViewModel), "CursorHoverRegular"),
      };
     [RelayCommand]
