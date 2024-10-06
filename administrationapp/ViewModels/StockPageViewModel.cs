@@ -1,42 +1,39 @@
+
 using System;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Input;
 using ReactiveUI;
 using administrationapp.Models;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Realms;
+using System.Threading.Tasks;
 
 namespace administrationapp.ViewModels;
 
-public class StockPageViewModel : ViewReactiveModelBase
+public partial class StockPageViewModel : ViewModelBase
 {
-    private readonly SpreadsheetImportModel _spreadsheetImportModel;
+
+    private readonly Realm _realm = Realm.GetInstance(RiConfig.GetConfiguration());
     
-    private ObservableCollection<SpreadsheetImportModel.SpreadsheetData> _excelData;
+    [ObservableProperty]
+    private List<CellObject>? _list;
 
-    public ObservableCollection<SpreadsheetImportModel.SpreadsheetData> ExcelData
+    [RelayCommand]
+    private void DeleteObjcts()
     {
-        get => _excelData;
-        set => this.RaiseAndSetIfChanged(ref _excelData, value);
-    }
+        _realm.Write(() => _realm.RemoveAll());
 
-    public ICommand LoadDataCommand { get; }
-    
-    public StockPageViewModel()
-    {
-        _spreadsheetImportModel = new SpreadsheetImportModel();
-
-        // Inicializar la colección vacía
-        ExcelData = new ObservableCollection<SpreadsheetImportModel.SpreadsheetData>();
-
-        // Inicializar el comando para cargar los datos
-        LoadDataCommand = ReactiveCommand.Create(LoadData);
-                        
-        Debug.WriteLine("A2");
-        
     }
     
-    private void LoadData()
+    [RelayCommand]
+    private async Task LoadData()
     {
-        _ = SpreadsheetImportModel.ReadExcelFile("/home/manu/Escritorio/test1.ods");
+        await SpreadsheetImportModel.ReadSpreedSheet("/home/manu/Escritorio/test1.ods");
+        List = _realm.All<CellObject>().ToList();
+
     }
 }
+
