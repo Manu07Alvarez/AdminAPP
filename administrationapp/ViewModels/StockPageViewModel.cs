@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Windows.Input;
 using ReactiveUI;
 using administrationapp.Models;
@@ -19,7 +20,7 @@ public partial class StockPageViewModel : ViewModelBase
     private readonly Realm _realm = Realm.GetInstance(RiConfig.GetConfiguration());
     
     [ObservableProperty]
-    private List<CellObject>? _list;
+    private IEnumerable<CellObject>? _list;
 
     [RelayCommand]
     private void DeleteObjcts()
@@ -32,7 +33,7 @@ public partial class StockPageViewModel : ViewModelBase
     private async Task LoadData()
     {
         await SpreadsheetImportModel.ReadSpreedSheet("/home/manu/Escritorio/test1.ods");
-        List = _realm.All<CellObject>().ToList();
+        List = _realm.All<CellObject>();
 
     }
 }

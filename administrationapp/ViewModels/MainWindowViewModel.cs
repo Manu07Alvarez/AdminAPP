@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using ReactiveUI;
 
 
@@ -20,20 +21,25 @@ public partial class MainWindowViewModel : ViewModelBase
 
     [ObservableProperty]
     private ListItemTemplate? _selectedListItem;
+    
+    private static readonly object[] InstanceArray = {
+        new HomePageViewModel(),
+        new StockPageViewModel(),
+        new ButtonPageViewModel()
+    };
+    
 
     partial void OnSelectedListItemChanged(ListItemTemplate? value)
     {
         if (value is null) return;
-        var instance=Activator.CreateInstance(value.ModelType);
-        if (instance is null) return;
-        CurrentPage = instance;
+        CurrentPage = value.ViewInstance;
     }
-    public ObservableCollection<ListItemTemplate> Items { get; } = new()
-    {
-        new ListItemTemplate(typeof(HomePageViewModel),"Homeregular"),
-        new ListItemTemplate(typeof(StockPageViewModel),"app_generic_regular"),
-        new ListItemTemplate(typeof(ButtonPageViewModel), "CursorHoverRegular"),
-     };
+    public ObservableCollection<ListItemTemplate> Items { get; } =
+    [
+        new(typeof(HomePageViewModel), "Homeregular", InstanceArray[0]),
+        new(typeof(StockPageViewModel), "app_generic_regular", InstanceArray[1]),
+        new(typeof(ButtonPageViewModel), "CursorHoverRegular", InstanceArray[2])
+    ];
     [RelayCommand]
     private void TriggerPane()
     {
@@ -43,8 +49,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
 public class ListItemTemplate
 {
-    public ListItemTemplate ( Type type, string iconKey)
+    public ListItemTemplate(Type type, string iconKey,object instance)
     {
+        ViewInstance =  instance;
         ModelType = type;
         Label = type.Name.Replace("PageViewModel", "");
         Application.Current!.TryFindResource(iconKey, out var res);
@@ -52,6 +59,7 @@ public class ListItemTemplate
 
     }
     public string Label { get; }
+    public object ViewInstance { get; }
     public Type ModelType { get; }
     public StreamGeometry ListItemIcon { get; }
 }
