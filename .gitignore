@@ -152,3 +152,10 @@ C#.code-workspace
 AdminAPP.generated.sln
 administrationapp.code-workspace
 administrationapp/.idea/.idea.administrationapp.dir/.idea
+/.vs
+administrationapp/.config
+/administrationapp/FodyWeavers.xsd
+/administrationapp/FodyWeavers.xml
+/administrationapp/.vs/administrationapp/FileContentIndex/9880a8d4-f5b0-4a74-9775-82ea08e2de2e.vsidx
+/administrationapp/.vs/administrationapp/FileContentIndex/3c56fc95-1d6b-41b4-8f3b-7d749a54da15.vsidx
+*.vsidx

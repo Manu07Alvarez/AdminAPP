@@ -1,12 +1,12 @@
 using Avalonia.Controls;
+using System;
 
 namespace administrationapp.Views;
 
-public partial class MainWindow : Window
+public partial class HomePageView : UserControl
 {
-    public MainWindow()
+    public HomePageView()
     {
         InitializeComponent();
     }
-         
 }
